@@ -12,12 +12,12 @@
                 <li class="breadcrumb-item">
                     <a href="#">CRUD</a>
                 </li>
-                <li class="breadcrumb-item active">Add</li>
+                <li class="breadcrumb-item active">ajouter </li>
             </ol>
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
-                    Crud Add
+                    ajouter crud
                 </div>
                 <div class="card-body">
                   <form class="form-horizontal" action="{% url 'create_user' %}" method="POST">
@@ -42,8 +42,8 @@
                         <div class="form-row">
                             <div class="col-md-6">
                                 <div class="form-label-group">
-                                    <input type="text" class="form-control" name="username" placeholder="Username" id="inputdescription" required="">
-                                    <label for="inputdescription">Username</label>
+                                    <input type="text" class="form-control" name="username" placeholder="nom etudiant" id="inputdescription" required="">
+                                    <label for="inputdescription">nom etudiant</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -59,24 +59,24 @@
                             <div class="col-md-6">
                                <div class="form-label-group">
                                     <input type="text" class="form-control" name="password" placeholder="Password" id="inputdescription" required="">
-                                    <label for="inputdescription">Password</label>
+                                    <label for="inputdescription">mots de passe</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-label-group">
                                            <select class="w3-select w3-border" name="userType">
-  <option value="{{ choice.2 }}">Choose User Role</option>
+  <option value="{{ choice.2 }}">choisir le role de  l'utilisateur</option>
  
-<option value="{{ choice.2 }}"> Publisher</option>
+<option value="{{ choice.2 }}"> Publicateur</option>
   <option value="{{ choice.3 }}"> Admin</option>
-  <option value="{{ choice.4 }}"> Librarian</option>
+  <option value="{{ choice.4 }}"> Libraire</option>
 
 </select>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="btn btn-primary btn-block" type="submit">Submit &nbsp;&nbsp;&nbsp;<span></span></button>
+                    <button class="btn btn-primary btn-block" type="submit">OK &nbsp;&nbsp;&nbsp;<span></span></button>
                 </form>
                 </div>
             </div>
