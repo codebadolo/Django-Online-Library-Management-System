@@ -1,14 +1,13 @@
 {% extends 'dashboard/base.html' %}
 {% block body %}
 
-
 <div class="container-fluid">
-<div class="row" style="padding-top: 30px">
+    <div class="row" style="padding-top: 30px">
 
-<div class="col-sm-1" style="color: red">
-</div>
+        <div class="col-sm-1" style="color: red">
+        </div>
 
-<div class="col-sm-10">
+        <div class="col-sm-10">
             <div class="card mb-3">
                 <div class="card-body">
                     {% for message in messages %}
@@ -16,15 +15,12 @@
                             {{ message }}
                         </div>
                     {% endfor %}
-                   
 
-                        
-                        <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-            <a href="#">BookApp Search Results</a>
-      </li>
-</ol>
-
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Résultats de recherche BookApp</a>
+                        </li>
+                    </ol>
 
                     {% if files %}
 
@@ -33,83 +29,79 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Book Cover</th>
-                                <th>Book Title</th>
-                                <th>Publisher</th>
-                                <th>Read</th>
-                                <th>Download</th>
-                                <th>Delete</th>
+                                <th>Couverture du livre</th>
+                                <th>Titre du livre</th>
+                                <th>Éditeur</th>
+                                <th>Lire</th>
+                                <th>Télécharger</th>
+                                <th>Supprimer</th>
                             </tr>
                             </thead>
                             <tbody>
 
-
                                   {% for file in files %}
-
-                        
                                 <tr>
                                   <td>{{ file.id }}</td>
                                   <td>
                                     {% if file.cover %}
                                     <img src="{{ file.cover.url }}" alt="{{ file.title }}" style="width:100px; height: 100px">
                                     {% else %}
-                                    <span class="text-muted">No cover</span>
+                                    <span class="text-muted">Pas de couverture</span>
                                     {% endif %}
                                    </td>
 
-                                  
                                   <td>{{ file.title }}</td>
                                   <td>{{ file.uploaded_by }}</td>
-
 
                                     <td>
                                     {% if file.pdf %}
                                       <a href="{{ file.pdf.url }}" class="btn btn-outline-primary" target="_blank">
-                                    View PDF</a>
+                                    Voir PDF</a>
                                     {% else %}
-                                    <span class="text-muted">No PDF</span>
+                                    <span class="text-muted">Pas de PDF</span>
                                    {% endif %}
                                   </td>
                                     <td>
                                     {% if file.cover %}
                                       <a href="{{ file.pdf.url }}" download class="btn btn-outline-success">
-                                    Download PDF</a>
+                                    Télécharger PDF</a>
                                     {% else %}
-                                   <span class="text-muted">No PDF</span>
+                                   <span class="text-muted">Pas de PDF</span>
                                    {% endif %}
                                   </td>
 
-        <td>
-          <a href="{% url 'adbookk' file.pk %}"><button type="button" class="btn btn-danger"> Delete</button></a></td>
-                                  
+                                  <td>
+                                    <a href="{% url 'adbookk' file.pk %}"><button type="button" class="btn btn-danger"> Supprimer</button></a>
+                                  </td>
                                 </tr>
 
-                                <!-- end for and if -->
+                                <!-- Fin de la boucle for et if -->
                                 {% endfor %}
                             </tbody>
                         </table>
 
+                        {% else %}
 
-                        {%else%}
+                        <center><h3 style="text-align:center; color:yellow; background: green; width: 600px" id="answer">Aucune recherche trouvée</h3></center>
 
+                        <style type="text/css">
+                          #search_result {
+                         display: none;
+                         }
+                        </style>
 
-<center><h3 style="text-align:center; color:yellow; background: green; width: 600px" id="answer">No Search Found</h3></center>
+                       {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                <style type="text/css">
-                  #search_result {
-                 display: none;
-                 }
-    </style>
-
-                       {%endif%}    
-                            </tbody>
-                        </table>
-
-                        {% if files.has_other_pages %}
+{% if files.has_other_pages %}
     <ul class="pagination">
         {% if files.has_previous %}
-            <li class="waves-effect"><a href="?page=
-                    {{ files.previous_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}"><i
+            <li class="waves-effect"><a href="?page={{ files.previous_page_number }}{% if request.GET.query %}&query={{ request.GET.query }}{% endif %}"><i
                     class="material-icons text-primary">&laquo;</i></a></li>
         {% else %}
             <li class="disabled"><a href="#!"><i class="material-icons text-primary">&laquo;</i></a></li>
@@ -132,30 +124,9 @@
     </ul>
 {% endif %}
 
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
-        
-          </div>
-        </div>
-      </div>
-    </div>
-
 {% endblock body %}
 
 {% block extrascripts %}
   <script type="text/javascript">
   </script>
 {% endblock extrascripts %}
-
-
-
-
