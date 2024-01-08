@@ -11,15 +11,15 @@
         <div class="container-fluid">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="">Staff Members</a>
+                    <a href="">Membres du personnel</a>
                 </li>
                 <li class="breadcrumb-item active"></li>
             </ol>
             <div class="card mb-3">
                 <div class="card-header">
                     <i class="fas fa-table"></i>
-                    List Of Users
-                    <a  class="btn btn-sm btn-success" href="{% url 'create_user_form' %}" style="padding: 8px; float: right; background-color: green; color: white;">Add User</a>
+                    Liste des utilisateurs
+                    <a  class="btn btn-sm btn-success" href="{% url 'create_user_form' %}" style="padding: 8px; float: right; background-color: green; color: white;">Ajouter un utilisateur</a>
                 </div>
                 <div class="card-body">
                     {% for message in messages %}
@@ -32,12 +32,12 @@
                             <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Username</th>
-                                <th>User Role</th>
+                                <th>Nom d'utilisateur</th>
+                                <th>Rôle utilisateur</th>
                                 <th>Email</th>
-                                <th>View</th>
-                                <th>Edit</th>
-                                <th>Delete</th>
+                                <th>Voir</th>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
 
                             </tr>
                             </thead>
@@ -49,22 +49,22 @@
                                     <td>{{ forloop.counter }}</td>
                                     <td>{{ user.username }}</td>
                                     <td>{% if user.is_publisher == True %}
-                                      <p>Publisher</p>
+                                      <p>Éditeur</p>
                                     {% elif user.is_admin == True %}
                                       <p>Admin</p>
                                     {% else %}
-                                    <p>Librarian</p> 
+                                    <p>Bibliothécaire</p> 
                                       {% endif %}
                                     </td>
                                     <td>{{ user.email }}</td>
                                     <td>
-                <a href="{% url 'alvuser' user.pk %}"><button type="button" class="btn btn-primary"> View</button></a>
+                <a href="{% url 'alvuser' user.pk %}"><button type="button" class="btn btn-primary"> Voir</button></a>
                  </td>
                 <td>
-                <a href="{% url 'aeuser' user.pk %}"><button type="button" class="btn btn-warning"> Edit</button></a>
+                <a href="{% url 'aeuser' user.pk %}"><button type="button" class="btn btn-warning"> Modifier</button></a>
         </td>
         <td>
-          <a href="{% url 'aduser' user.pk %}"><button type="button" class="btn btn-danger"> Delete</button></a></td>
+          <a href="{% url 'aduser' user.pk %}"><button type="button" class="btn btn-danger"> Supprimer</button></a></td>
                                 </tr>
                             {% endfor %}
                         {% endif %}
@@ -112,7 +112,7 @@
 {% block extrascripts %}
   <script type="text/javascript">
       $(function () {
-          // Hide message
+          // Cacher le message
           $(".alert").fadeTo(2000, 500).slideUp(500, function () {
               $(".alert").slideUp(500);
           });
