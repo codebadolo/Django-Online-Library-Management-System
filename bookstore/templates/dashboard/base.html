@@ -95,38 +95,38 @@
     <li class="nav-item active">
         <a class="nav-link" href="{% url 'dashboard' %}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Admin Dashboard</span>
+            <span> Dashboard Admin</span>
         </a>
     </li>
     <li class="nav-item active">
         <a class="nav-link" href="">
             <i class="fas fa-user-circle fa-fw text-warning"></i>
-            <span style="color: yellow">Logged As {{ user.username }}</span>
+            <span style="color: yellow">connecter en tant que {{ user.username }}</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{% url 'alchat' %}">
             <i class="fas fa-book text-primary"></i>
-            <span style="color: white">Group Chat</span>
+            <span style="color: white">discussion de Groupe </span>
         </a>
     </li>
         <li class="nav-item">
         <a class="nav-link" href="{% url 'aabook_form' %}">
             <i class="fas fa-book text-primary"></i>
-            <span style="color: white">Add Book</span>
+            <span style="color: white">ajouter un livre</span>
         </a>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="{% url 'albook' %}">
             <i class="fas fa-book text-primary"></i>
-            <span style="color: white">Recent Added Books</span>
+            <span style="color: white">livres recent</span>
         </a>
     </li>
 
       <li class="nav-item">
         <a class="nav-link" href="{% url 'ambook' %}">
             <i class="fas fa-book text-primary"></i>
-            <span style="color: white">Manage Books</span>
+            <span style="color: white">Manager les livres</span>
         </a>
     </li>
      <li class="nav-item">
@@ -138,13 +138,13 @@
      <li class="nav-item">
         <a class="nav-link" href="{% url 'afeedback' %}">
             <i class="fas fa-book text-primary"></i>
-            <span style="color: white">User Feedback</span>
+            <span style="color: white">Feedback</span>
         </a>
     </li>
      <li class="nav-item">
         <a class="nav-link" href="{% url 'aluser' %}">
             <i class="fas fa-user text-primary"></i>
-            <span style="color: white">Manage User</span>
+            <span style="color: white">Manager les etudiants </span>
         </a>
     </li>
 </ul>    
@@ -167,15 +167,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <h5 class="modal-title" id="exampleModalLabel">etes vous pret a quitter  ?</h5>
                 <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-body">Sélectionnez « Se déconnecter » ci-dessous si vous êtes prêt à mettre fin à votre session en cours.</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-               <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">anuler</button>
+               <a class="btn btn-primary" href="{% url 'logout' %}">deconnecter</a>
             </div>
         </div>
     </div>
