@@ -28,7 +28,7 @@
                                         <form method="post">
                                             {% csrf_token %}
                                             <div class="alert alert-warning" role="alert">
-                                                Êtes-vous sûr de vouloir supprimer les détails du livre {{ object }} ?
+                                                Êtes-vous sûr  de vouloir supprimer les détails du livre {{ object }} ?
                                             </div>
                                             <input type="submit" class="btn btn-danger" value="Oui, supprimez-le" />
                                             <a class="btn btn-success" href="{% url 'dashboard' %}">Non, je viens d'essayer le bouton supprimer</a>
